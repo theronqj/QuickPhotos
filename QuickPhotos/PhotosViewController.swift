@@ -36,7 +36,10 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
             case .failure:
                 self.photoDataSource.photos.removeAll()
             }
-            self.collectionView.reloadSections(IndexSet(integer: 0))
+            DispatchQueue.main.async {
+                self.collectionView.reloadSections(IndexSet(integer: 0))
+            }
+
         }
     }
     
