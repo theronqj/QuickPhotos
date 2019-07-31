@@ -17,12 +17,13 @@
 		32F19A0622EE449800B4A179 /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A0522EE449800B4A179 /* FlickrAPI.swift */; };
 		32F19A0822EE51AF00B4A179 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A0722EE51AF00B4A179 /* Keys.swift */; };
 		32F19A0A22EE59C600B4A179 /* PhotoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A0922EE59C600B4A179 /* PhotoStore.swift */; };
-		32F19A0C22F0E33E00B4A179 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A0B22F0E33E00B4A179 /* Photo.swift */; };
 		32F19A0E22F0FF5000B4A179 /* PhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A0D22F0FF5000B4A179 /* PhotoDataSource.swift */; };
 		32F19A1022F1058800B4A179 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A0F22F1058800B4A179 /* PhotoCollectionViewCell.swift */; };
 		32F19A1622F1152C00B4A179 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A1522F1152B00B4A179 /* ImageStore.swift */; };
 		32F19A1822F1180100B4A179 /* PhotoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A1722F1180100B4A179 /* PhotoInfoViewController.swift */; };
 		32F19A1B22F1F58700B4A179 /* QuickPhotos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A1922F1F58700B4A179 /* QuickPhotos.xcdatamodeld */; };
+		32F19A1E22F206BA00B4A179 /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A1C22F206BA00B4A179 /* Photo+CoreDataClass.swift */; };
+		32F19A1F22F206BA00B4A179 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A1D22F206BA00B4A179 /* Photo+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,12 +60,13 @@
 		32F19A0522EE449800B4A179 /* FlickrAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
 		32F19A0722EE51AF00B4A179 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		32F19A0922EE59C600B4A179 /* PhotoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStore.swift; sourceTree = "<group>"; };
-		32F19A0B22F0E33E00B4A179 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		32F19A0D22F0FF5000B4A179 /* PhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
 		32F19A0F22F1058800B4A179 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		32F19A1522F1152B00B4A179 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		32F19A1722F1180100B4A179 /* PhotoInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoViewController.swift; sourceTree = "<group>"; };
 		32F19A1A22F1F58700B4A179 /* QuickPhotos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuickPhotos.xcdatamodel; sourceTree = "<group>"; };
+		32F19A1C22F206BA00B4A179 /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		32F19A1D22F206BA00B4A179 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,8 @@
 		32F199C922EE354F00B4A179 = {
 			isa = PBXGroup;
 			children = (
+				32F19A1C22F206BA00B4A179 /* Photo+CoreDataClass.swift */,
+				32F19A1D22F206BA00B4A179 /* Photo+CoreDataProperties.swift */,
 				32F199D422EE354F00B4A179 /* QuickPhotos */,
 				32F199E922EE355000B4A179 /* QuickPhotosTests */,
 				32F199F422EE355100B4A179 /* QuickPhotosUITests */,
@@ -119,7 +123,6 @@
 				32F19A0322EE363E00B4A179 /* PhotosViewController.swift */,
 				32F19A0D22F0FF5000B4A179 /* PhotoDataSource.swift */,
 				32F19A1722F1180100B4A179 /* PhotoInfoViewController.swift */,
-				32F19A0B22F0E33E00B4A179 /* Photo.swift */,
 				32F19A1922F1F58700B4A179 /* QuickPhotos.xcdatamodeld */,
 				32F19A0722EE51AF00B4A179 /* Keys.swift */,
 				32F19A1422F1114600B4A179 /* View */,
@@ -299,12 +302,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32F19A0C22F0E33E00B4A179 /* Photo.swift in Sources */,
 				32F19A1822F1180100B4A179 /* PhotoInfoViewController.swift in Sources */,
+				32F19A1E22F206BA00B4A179 /* Photo+CoreDataClass.swift in Sources */,
 				32F19A1022F1058800B4A179 /* PhotoCollectionViewCell.swift in Sources */,
 				32F19A1B22F1F58700B4A179 /* QuickPhotos.xcdatamodeld in Sources */,
 				32F19A0E22F0FF5000B4A179 /* PhotoDataSource.swift in Sources */,
 				32F19A0A22EE59C600B4A179 /* PhotoStore.swift in Sources */,
+				32F19A1F22F206BA00B4A179 /* Photo+CoreDataProperties.swift in Sources */,
 				32F19A0622EE449800B4A179 /* FlickrAPI.swift in Sources */,
 				32F19A1622F1152C00B4A179 /* ImageStore.swift in Sources */,
 				32F19A0422EE363E00B4A179 /* PhotosViewController.swift in Sources */,
