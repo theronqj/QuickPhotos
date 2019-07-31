@@ -46,13 +46,21 @@ class PhotoStore {
         let url = FlickrAPI.interestingPhotosURL
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request) { (data, response, error) in
-            let result = self.processPhotosRequest(data: data, error: error)
+            var result = self.processPhotosRequest(data: data, error: error)
+            
+            if case .success = result {
+                do {
+                    try self.persistentContainer.viewContext.save()
+                } catch let error {
+                    result = .failure(error)
+                }
+            }
             completion(result)
         }
         task.resume()
     }
     
-    //helper method for 'func fetchInterestingPhotos(completion:)'
+    // Helper method for 'func fetchInterestingPhotos(completion:)'
     private func processPhotosRequest(data: Data?, error: Error?) -> PhotosResult {
         guard let jsonData = data else {
             return .failure(error!)
@@ -90,7 +98,7 @@ class PhotoStore {
         task.resume()
     }
     
-    // helper method for 'func fetchImage(for:completion:)'
+    // Helper method for 'func fetchImage(for:completion:)'
     private func processImageRequest(data: Data?, error: Error?) -> ImageResult {
         guard let imageData = data, let image = UIImage(data: imageData) else {
             
@@ -102,5 +110,20 @@ class PhotoStore {
             }
         }
         return .success(image)
+    }
+    
+    // Fetch photos from managed object view context
+    func fetchAllPhotos(completion: @escaping (PhotosResult) -> Void) {
+        let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
+        let sortByDateTaken = NSSortDescriptor(key: #keyPath(Photo.dateTaken), ascending: true)
+        fetchRequest.sortDescriptors = [sortByDateTaken]
+        
+        let viewContext = persistentContainer.viewContext
+        do {
+            let allPhotos = try viewContext.fetch(fetchRequest)
+            completion(.success(allPhotos))
+        } catch {
+            completion(.failure(error))
+        }
     }
 }

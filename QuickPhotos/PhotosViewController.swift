@@ -20,21 +20,28 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
         
         collectionView.dataSource = photoDataSource
         collectionView.delegate = self
+        
+        updateDataSource()
 
         store.fetchInterestingPhotos { (photosResult) in
+            self.updateDataSource()
+        }
+    }
+    
+    private func updateDataSource() {
+        store.fetchAllPhotos { (photosResult) in
             switch photosResult {
             case let .success(photos):
-                print ("Successfully found \(photos.count) photos")
                 self.photoDataSource.photos = photos
-            case let .failure(error):
-                print ("Error fetching interesting photos: \(error)")
+            case .failure:
                 self.photoDataSource.photos.removeAll()
             }
-            DispatchQueue.main.async {
-                self.collectionView.reloadSections(IndexSet(integer: 0))
-                }
-            }
+            self.collectionView.reloadSections(IndexSet(integer: 0))
+        }
     }
+    
+    
+    // MARK: - Table View Methods
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
@@ -49,7 +56,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
             }
             let photoIndexPath = IndexPath(item: photoIndex, section: 0)
             
-            // When the request finishes, only updae the cell if it's still visible
+            // When the request finishes, only update the cell if it's still visible
             if let cell = self.collectionView.cellForItem(at: photoIndexPath) as? PhotoCollectionViewCell {
                 DispatchQueue.main.async {
                     cell.update(with: image)
