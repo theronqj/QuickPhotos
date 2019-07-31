@@ -55,6 +55,7 @@
                                         <connections>
                                             <outlet property="imageView" destination="lsb-c4-LxR" id="b4w-G6-BLf"/>
                                             <outlet property="spinner" destination="vrP-Pp-8lO" id="cRn-XC-KmB"/>
+                                            <segue destination="MDA-kg-JcE" kind="show" identifier="showPhoto" id="ECW-s4-7h1"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -77,6 +78,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="382" y="822"/>
+        </scene>
+        <!--Photo Info View Controller-->
+        <scene sceneID="s5p-Lm-NMd">
+            <objects>
+                <viewController id="MDA-kg-JcE" customClass="PhotoInfoViewController" customModule="QuickPhotos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mmt-DA-ydp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dtb-NA-aOV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uUY-fI-0ru" firstAttribute="bottom" secondItem="dtb-NA-aOV" secondAttribute="bottom" id="MTE-2y-vSz"/>
+                            <constraint firstItem="dtb-NA-aOV" firstAttribute="top" secondItem="uUY-fI-0ru" secondAttribute="top" id="dgD-O3-Fek"/>
+                            <constraint firstItem="dtb-NA-aOV" firstAttribute="leading" secondItem="uUY-fI-0ru" secondAttribute="leading" id="orL-Ce-JzX"/>
+                            <constraint firstItem="uUY-fI-0ru" firstAttribute="trailing" secondItem="dtb-NA-aOV" secondAttribute="trailing" id="tac-DI-D0E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uUY-fI-0ru"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="dtb-NA-aOV" id="EcL-Sw-hYm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dg9-Ic-AnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1210" y="822"/>
         </scene>
         <!--Photos-->
         <scene sceneID="NNh-o1-1Da">

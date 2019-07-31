@@ -21,6 +21,7 @@
 		32F19A0E22F0FF5000B4A179 /* PhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A0D22F0FF5000B4A179 /* PhotoDataSource.swift */; };
 		32F19A1022F1058800B4A179 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A0F22F1058800B4A179 /* PhotoCollectionViewCell.swift */; };
 		32F19A1622F1152C00B4A179 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A1522F1152B00B4A179 /* ImageStore.swift */; };
+		32F19A1822F1180100B4A179 /* PhotoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F19A1722F1180100B4A179 /* PhotoInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		32F19A0D22F0FF5000B4A179 /* PhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
 		32F19A0F22F1058800B4A179 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		32F19A1522F1152B00B4A179 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		32F19A1722F1180100B4A179 /* PhotoInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				32F199D522EE354F00B4A179 /* AppDelegate.swift */,
 				32F19A0322EE363E00B4A179 /* PhotosViewController.swift */,
 				32F19A0D22F0FF5000B4A179 /* PhotoDataSource.swift */,
+				32F19A1722F1180100B4A179 /* PhotoInfoViewController.swift */,
 				32F19A0B22F0E33E00B4A179 /* Photo.swift */,
 				32F19A0722EE51AF00B4A179 /* Keys.swift */,
 				32F19A1422F1114600B4A179 /* View */,
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32F19A0C22F0E33E00B4A179 /* Photo.swift in Sources */,
+				32F19A1822F1180100B4A179 /* PhotoInfoViewController.swift in Sources */,
 				32F19A1022F1058800B4A179 /* PhotoCollectionViewCell.swift in Sources */,
 				32F19A0E22F0FF5000B4A179 /* PhotoDataSource.swift in Sources */,
 				32F19A0A22EE59C600B4A179 /* PhotoStore.swift in Sources */,
